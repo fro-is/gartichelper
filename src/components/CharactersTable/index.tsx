@@ -1,7 +1,7 @@
-import React, { ChangeEvent } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, { ChangeEvent } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-import { Table } from './styles';
+import { Table } from "./styles";
 
 interface CharacterFilterObject {
   id: string;
@@ -23,11 +23,10 @@ const CharactersTable: React.FC<CharactersTableProps> = ({
 }: CharactersTableProps) => {
   const handleCharactersFilterChange = (
     event: ChangeEvent<HTMLInputElement>,
-    id: string,
+    id: string
   ): void => {
     const newCharacters = filters.characters.map(character => {
       if (character.id === id)
-        // eslint-disable-next-line no-param-reassign
         character[event.currentTarget.name] = event.currentTarget.value;
 
       return character;
@@ -41,7 +40,7 @@ const CharactersTable: React.FC<CharactersTableProps> = ({
       ...filters,
       characters: [
         ...filters.characters,
-        { id: uuidv4(), letter: '', position: '' },
+        { id: uuidv4(), letter: "", position: "" },
       ],
     });
   };
@@ -49,7 +48,7 @@ const CharactersTable: React.FC<CharactersTableProps> = ({
   const handleCleanCharacters = (): void => {
     setFilters({
       ...filters,
-      characters: [{ id: uuidv4(), letter: '', position: '' }],
+      characters: [{ id: uuidv4(), letter: "", position: "" }],
     });
   };
 
