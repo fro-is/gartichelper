@@ -58,8 +58,11 @@ const CategorySelect: React.FC<{ category: string }> = ({ category }) => {
       noOptionsMessage={() => "Não temos essa categoria ):"}
       options={categories}
       styles={selectStyles}
-      defaultValue={{ label: category, value: category }}
-      onChange={value => value?.value && Router.push(value.value)}
+      defaultValue={{
+        label: category.charAt(0).toUpperCase() + category.slice(1),
+        value: category,
+      }}
+      onChange={value => value?.value && Router.push(value.value.toLowerCase())}
     />
   );
 };

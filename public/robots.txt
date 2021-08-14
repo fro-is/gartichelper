@@ -1,3 +1,10 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://gartichelper.me
+
+# Sitemaps
+Sitemap: https://gartichelper.me/sitemap.xml
+Sitemap: https://gartichelper.me/server-sitemap.xml

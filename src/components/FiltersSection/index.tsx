@@ -82,7 +82,7 @@ const FilterSection: React.FC<FilterProps> = ({
   return (
     <FilterContainer>
       <Logo small />
-      <CategorySelect category={category} />
+      <CategorySelect category={category || "geral"} />
       <FilterInput>
         Nº de Letras:
         <input

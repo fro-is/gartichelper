@@ -16,7 +16,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
   className,
 }: CategoryButtonProps) => {
   return (
-    <Link href={`/categories/${category}`}>
+    <Link href={`/categories/${category.toLowerCase()}`}>
       <Button className={className}>
         <Image src={icon} alt={category} width="32px" height="32px" />
         <p>{category}</p>
