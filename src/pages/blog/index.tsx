@@ -30,3 +30,9 @@
 //     revalidate: 5,
 //   };
 // }
+
+import React from "react";
+
+export default function Blog() {
+  return <div>Page under construction.</div>;
+}
