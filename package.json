@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "concurrently \"next dev\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && cross-env NODE_ENV=production next build",
     "start": "next start",
     "postbuild": "next-sitemap --config sitemap-config.js"
   },
@@ -11,6 +11,7 @@
     "@types/uuid": "^8.3.1",
     "copy-to-clipboard": "^3.3.1",
     "next": "latest",
+    "next-sanity": "^0.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
