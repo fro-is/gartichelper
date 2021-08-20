@@ -38,7 +38,7 @@ export const InfoContainer = styled.div`
 `;
 
 // RIGHT SIDE
-export const CategoryContainer = styled.div`
+export const CategoryContainer = styled.ul`
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 20px;
@@ -46,9 +46,11 @@ export const CategoryContainer = styled.div`
   .Geral {
     grid-column: auto / span 2;
 
-    justify-content: center;
+    a {
+      justify-content: center;
+    }
 
-    p {
+    span {
       flex: 0;
       margin: 8px;
     }
@@ -59,14 +61,18 @@ export const CategoryContainer = styled.div`
     .Geral {
       grid-column: auto;
 
-      p {
+      a {
+        justify-content: center;
+      }
+
+      span {
         flex: 1;
       }
     }
   }
 `;
 
-export const Label = styled.p`
+export const Label = styled.h1`
   font-size: 36px;
   font-weight: bold;
   line-height: 100%;
@@ -74,5 +80,5 @@ export const Label = styled.p`
   text-align: center;
   color: #fff;
 
-  margin: 25px;
+  margin-bottom: 25px;
 `;

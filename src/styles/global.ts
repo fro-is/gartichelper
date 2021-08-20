@@ -58,4 +58,8 @@ body, input, button {
 button {
   cursor: pointer;
 }
+
+li {
+  list-style: none;
+}
 `;
