@@ -1,20 +1,32 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.main`
-  flex: 1;
-  max-height: 100vh;
+  grid-area: main;
 
-  overflow-y: auto;
-  overflow-x: hidden;
+  padding: 2rem 1rem;
 
-  header {
-    justify-content: flex-start;
+  @media only screen and (min-width: 768px) {
+    padding: 0rem 3rem;
+    max-height: calc(100vh - 60px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    color: white;
+    font-size: 24px;
   }
 
   p {
-    color: black !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  > span {
+    color: #143461;
+    font-weight: 600;
   }
 
   //SCROLLBAR

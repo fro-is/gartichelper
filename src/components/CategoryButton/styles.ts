@@ -34,7 +34,7 @@ export const Button = styled.a`
     margin-right: 10px;
   }
 
-  p {
+  span {
     text-align: center;
     flex: 1;
   }

@@ -45,19 +45,20 @@ const Home: React.FC = () => (
           amigos!
         </p>
       </InfoContainer>
-      <div>
-        <Label>Escolha uma Categoria</Label>
+      <main itemScope itemType="https://schema.org/BreadcrumbList">
+        <Label itemProp="name">Lista de temas</Label>
         <CategoryContainer>
-          {categories.map(({ icon, name }) => (
+          {categories.map(({ icon, name }, index) => (
             <CategoryButton
               key={name}
               className={name}
               icon={icon}
               category={name}
+              position={(index + 1).toString()}
             />
           ))}
         </CategoryContainer>
-      </div>
+      </main>
     </StyledBody>
   </>
 );

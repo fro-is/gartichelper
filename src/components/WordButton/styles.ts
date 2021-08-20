@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default styled.li`
   padding: 4px;
-  margin: 5px 20px 10px 0px;
+  margin: 4px 20px 10px 0px;
 
   max-height: 45px;
 
@@ -27,6 +27,10 @@ export default styled.li`
 
   span {
     color: #fff;
+  }
+
+  > svg {
+    vertical-align: bottom;
   }
 
   &:hover {
