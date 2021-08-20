@@ -45,7 +45,7 @@ const Home: React.FC = () => (
           amigos!
         </p>
       </InfoContainer>
-      <div itemScope itemType="https://schema.org/BreadcrumbList">
+      <main itemScope itemType="https://schema.org/BreadcrumbList">
         <Label itemProp="name">Lista de temas</Label>
         <CategoryContainer>
           {categories.map(({ icon, name }, index) => (
@@ -54,11 +54,11 @@ const Home: React.FC = () => (
               className={name}
               icon={icon}
               category={name}
-              position={index.toString()}
+              position={(index + 1).toString()}
             />
           ))}
         </CategoryContainer>
-      </div>
+      </main>
     </StyledBody>
   </>
 );

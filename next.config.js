@@ -6,4 +6,13 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/categories/:path*",
+        destination: "/temas/:path*",
+        permanent: false,
+      },
+    ];
+  },
 };

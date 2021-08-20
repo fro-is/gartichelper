@@ -8,7 +8,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   );
 
   const fields: ISitemapField[] = categories.map(categorie => ({
-    loc: `https://gartichelper.me/categories/${categorie}`,
+    loc: `https://gartichelper.me/temas/${categorie}`,
     lastmod: new Date().toISOString(),
   }));
 

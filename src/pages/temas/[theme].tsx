@@ -6,12 +6,14 @@ import GlobalStyle from "../../styles/global";
 import { Container } from "../../styles/Categories";
 
 import wordsRepository from "../../database/words";
+
+import NavBar from "../../components/NavBar";
 import FiltersSection from "../../components/FiltersSection";
 import WordsSection from "../../components/WordsSection";
 
 const Categories: React.FC = () => {
   const router = useRouter();
-  const { category } = router.query;
+  const category = router.query.theme;
 
   const [words, setWords] = useState<string[]>([]);
   const [filteredWords, setFilteredWords] = useState<string[]>([]);
@@ -59,7 +61,8 @@ const Categories: React.FC = () => {
           words={words}
           setFilteredWords={setFilteredWords}
         />
-        <WordsSection words={filteredWords} />
+        <NavBar />
+        <WordsSection words={filteredWords} category={category} />
       </Container>
     </>
   );

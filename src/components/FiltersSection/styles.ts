@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FilterContainer = styled.aside`
+  grid-area: aside;
   min-width: 300px;
   max-width: 350px;
 

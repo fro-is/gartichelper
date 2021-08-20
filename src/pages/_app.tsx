@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import * as gtag from "../lib/gtag";
 
 import { ThemeProvider } from "styled-components";
@@ -27,6 +28,20 @@ export default function App({ Component, pageProps }: any) {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -55,7 +55,7 @@ const selectStyles = {
 const CategorySelect: React.FC<{ category: string }> = ({ category }) => {
   return (
     <Select
-      noOptionsMessage={() => "Não temos essa categoria ):"}
+      noOptionsMessage={() => "Não temos esse tema ):"}
       options={categories}
       styles={selectStyles}
       defaultValue={{
