@@ -1,8 +1,9 @@
-import React, { memo } from "react";
+import React, { useState, useCallback, memo } from "react";
 import { FaInfoCircle } from "react-icons/fa";
 
 import { Container, WordsContainer } from "./styles";
 
+import ImageModal from "../ImageModal";
 import WordButton from "../WordButton";
 
 interface WordSectionProps {
@@ -14,8 +15,27 @@ const WordsSection: React.FC<WordSectionProps> = ({
   words,
   category,
 }: WordSectionProps) => {
+  const [showModal, setShowModal] = useState(false);
+  const [modalWord, setModalWord] = useState("");
+
+  const handleShowModal = useCallback((word: string) => {
+    console.log("Showing modal for " + word);
+    setShowModal(true);
+    setModalWord(word);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    console.log("Closing modal");
+    setShowModal(false);
+  }, []);
+
   return (
-    <Container itemScope itemType="https://schema.org/ItemList">
+    <Container itemScope itemType="https://schema.org/ItemList" id="word-root">
+      <ImageModal
+        show={showModal}
+        handleClose={handleCloseModal}
+        word={modalWord}
+      />
       <h1 itemProp="name">Lista de {category}</h1>
       <meta itemProp="numberOfItems" content={words.length.toString()} />
       <link
@@ -33,6 +53,7 @@ const WordsSection: React.FC<WordSectionProps> = ({
             key={`${word}`}
             word={word}
             position={(index + 1).toString()}
+            handleShowModal={handleShowModal}
           />
         ))}
       </WordsContainer>

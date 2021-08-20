@@ -31,6 +31,11 @@ export default styled.li`
 
   > svg {
     vertical-align: bottom;
+    margin-left: 4px;
+  }
+
+  > svg:first-of-type {
+    margin-left: 0px;
   }
 
   &:hover {
