@@ -1,15 +1,21 @@
 import React, { memo } from "react";
-import { FiCopy } from "react-icons/fi";
 import copy from "copy-to-clipboard";
+import { FiCopy } from "react-icons/fi";
+import { BsImageFill } from "react-icons/bs";
 
 import WordButtonStyled from "./styles";
 
 interface WordButtonProps {
   word: string;
   position: string;
+  handleShowModal: (word: string) => void;
 }
 
-const WordButton: React.FC<WordButtonProps> = ({ word }: WordButtonProps) => {
+const WordButton: React.FC<WordButtonProps> = ({
+  word,
+  position,
+  handleShowModal,
+}: WordButtonProps) => {
   return (
     <WordButtonStyled
       onClick={() => copy(word)}
@@ -18,8 +24,9 @@ const WordButton: React.FC<WordButtonProps> = ({ word }: WordButtonProps) => {
     >
       <span itemProp="identifier">{`(${word.length})`}</span>
       <strong itemProp="item">{word}</strong>
-      <FiCopy width={20} height={20} />
-      <meta itemProp="position" content="1" />
+      <FiCopy size={20} />
+      <BsImageFill size={20} onClick={() => handleShowModal(word)} />
+      <meta itemProp="position" content={position} />
     </WordButtonStyled>
   );
 };
