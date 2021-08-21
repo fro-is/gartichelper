@@ -1,9 +1,14 @@
 import React, { useState, useRef, useEffect, ChangeEvent } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import cache from "memory-cache";
 
 import { ModalOverlay, ModalWrapper, ModalContainer, Title } from "./styles";
+
+interface GoogleImageSanitizedProps {
+  url: string;
+  parentPage: string;
+}
 
 interface ImageModal {
   show: Boolean;
@@ -20,6 +25,9 @@ const backdrop = {
 
 export default function ImageModal({ show, handleClose, word }: ImageModal) {
   const [isBrowser, setIsBrowser] = useState(false);
+  const [images, setImages] = useState<GoogleImageSanitizedProps[] | undefined>(
+    undefined
+  );
 
   const modalWrapperRef = useRef(null);
 
@@ -31,8 +39,26 @@ export default function ImageModal({ show, handleClose, word }: ImageModal) {
   };
 
   useEffect(() => {
+    setImages(undefined);
+
+    async function getWordImages() {
+      const url = `/api/images?word=${word}`;
+
+      const cachedResponse = cache.get(url);
+      if (cachedResponse) {
+        console.log("Cached image");
+        setImages(cachedResponse.images);
+      } else {
+        console.log("Getting non-cached image");
+        const response = await fetch(url);
+        const data = await response.json();
+        cache.put(url, data);
+        setImages(data.images);
+      }
+    }
+
     if (show) {
-      // chamar api
+      getWordImages();
     }
 
     // handle the close event with the overlay
@@ -40,6 +66,11 @@ export default function ImageModal({ show, handleClose, word }: ImageModal) {
     window.addEventListener("click", backdropHandler);
     return () => window.removeEventListener("click", backdropHandler);
   }, [show]);
+
+  const handleCloseClick = () => {
+    setImages(undefined);
+    handleClose();
+  };
 
   const modalContent = show ? (
     <AnimatePresence exitBeforeEnter>
@@ -51,19 +82,18 @@ export default function ImageModal({ show, handleClose, word }: ImageModal) {
                 <Title>
                   <h2>{word}</h2>
                 </Title>
-                <button onClick={handleClose}></button>
-                <img
-                  src="https://gartic.com.br/imgs/mural/pi/pinktrix/abacaxi.png"
-                  width={250}
-                />
-                <img
-                  src="https://gartic.com.br/imgs/mural/lu/lucashenriq/abacaxi.png"
-                  width={250}
-                />
-
-                <Link href="/">
-                  <a>Clique aqui para ver mais desenhos</a>
-                </Link>
+                <button onClick={handleCloseClick}></button>
+                {images ? (
+                  <>
+                    <img src={images[0].url} width={250} />
+                    <img src={images[1].url} width={250} />
+                  </>
+                ) : (
+                  <p>Buscando desenhos...</p>
+                )}
+                <a href={`https://gartic.com.br/desenhos/${word}`}>
+                  Clique aqui para ver mais desenhos
+                </a>
               </ModalContainer>
             </ModalWrapper>
           </motion.div>

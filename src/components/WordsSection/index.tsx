@@ -1,9 +1,12 @@
 import React, { useState, useCallback, memo } from "react";
-import { FaInfoCircle } from "react-icons/fa";
+import dynamic from "next/dynamic";
+import { FaInfoCircle, FaSpinner } from "react-icons/fa";
 
 import { Container, WordsContainer } from "./styles";
 
-import ImageModal from "../ImageModal";
+const ImageModal = dynamic(() => import("../ImageModal"), {
+  loading: () => <FaSpinner />,
+});
 import WordButton from "../WordButton";
 
 interface WordSectionProps {
@@ -46,6 +49,11 @@ const WordsSection: React.FC<WordSectionProps> = ({
       <span>
         <FaInfoCircle width={30} height={30} />
         Clique na palavra para copiar, elas estão ordenadas em ordem alfabética!
+      </span>
+      <br />
+      <span>
+        <FaInfoCircle width={30} height={30} />
+        Clique no ícone de imagem para ver desenhos da palavra!
       </span>
       <WordsContainer>
         {words.map((word, index) => (
