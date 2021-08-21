@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { FaGithub, FaQuestionCircle, FaHome } from "react-icons/fa";
 import { Header } from "./styles";
@@ -33,6 +34,15 @@ const NavBar: React.FC = () => {
             >
               <FaGithub size={26} />
               <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://gartic.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="gartic-logo"></div>
             </a>
           </li>
         </ul>

@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta property="og:url" content="http://www.gartichelper.me" />
+          <meta http-Equiv="content-language" content="pt-br"></meta>
           <meta
             property="og:image"
             content="https://i.ibb.co/VBDzDYL/gartic-helper-og.png"

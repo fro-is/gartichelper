@@ -13,6 +13,16 @@ module.exports = {
         destination: "/temas/:path*",
         permanent: false,
       },
+      {
+        source: "/temas/",
+        destination: "/temas/geral",
+        permanent: false,
+      },
+      {
+        source: "/temas",
+        destination: "/temas/geral",
+        permanent: false,
+      },
     ];
   },
 };

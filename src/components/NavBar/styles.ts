@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Header = styled.header`
   width: 100%;
@@ -7,6 +7,7 @@ export const Header = styled.header`
 
   ul {
     display: flex;
+    align-items: center;
 
     li {
       list-style: none;
@@ -29,6 +30,13 @@ export const Header = styled.header`
 
         span {
           margin: 4px;
+        }
+
+        .gartic-logo {
+          width: 150px;
+          height: 31px;
+          background-image: url("/assets/images/gartic-logo.png");
+          background-size: contain;
         }
       }
     }

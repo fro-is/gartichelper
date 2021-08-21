@@ -23,8 +23,10 @@ const WordButton: React.FC<WordButtonProps> = ({
       itemProp="itemListElement"
     >
       <span itemProp="identifier">{`(${word.length})`}</span>
-      <strong itemProp="item">{word}</strong>
-      <FiCopy size={20} />
+      <div className="copy">
+        <strong itemProp="item">{word}</strong>
+        <FiCopy size={20} />
+      </div>
       <BsImageFill size={20} onClick={() => handleShowModal(word)} />
       <meta itemProp="position" content={position} />
     </WordButtonStyled>

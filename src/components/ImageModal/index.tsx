@@ -63,6 +63,7 @@ export default function ImageModal({ show, handleClose, word }: ImageModal) {
 
     // handle the close event with the overlay
     setIsBrowser(true);
+    window.scrollTo(0, 0);
     window.addEventListener("click", backdropHandler);
     return () => window.removeEventListener("click", backdropHandler);
   }, [show]);
@@ -91,7 +92,14 @@ export default function ImageModal({ show, handleClose, word }: ImageModal) {
                 ) : (
                   <p>Buscando desenhos...</p>
                 )}
-                <a href={`https://gartic.com.br/desenhos/${word}`}>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={`https://gartic.com.br/desenhos/${word.replace(
+                    /\s/g,
+                    "-"
+                  )}`}
+                >
                   Clique aqui para ver mais desenhos
                 </a>
               </ModalContainer>

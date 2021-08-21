@@ -16,8 +16,6 @@ export default styled.li`
   border: 4px solid #002043;
   border-radius: 8px;
 
-  transition: color 0.2s;
-
   cursor: pointer;
 
   strong {
@@ -31,14 +29,22 @@ export default styled.li`
 
   > svg {
     vertical-align: bottom;
-    margin-left: 4px;
   }
 
-  > svg:first-of-type {
-    margin-left: 0px;
+  .copy {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 4px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #fff;
+    }
   }
 
-  &:hover {
-    color: white;
+  svg:last-of-type:hover {
+    transition: color 0.2s;
+
+    color: #fff;
   }
 `;
