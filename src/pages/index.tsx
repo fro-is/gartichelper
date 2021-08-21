@@ -24,11 +24,11 @@ const Home: React.FC = () => (
       <meta content={`Gartic Helper`} property="og:title" />
       <meta
         name="description"
-        content="Buscador de palavras do Gartic. Listas de palavras e respostas. Uma ajuda pra você ganhar sua partida com os amigos! Aplique diversos filtros e adivinhe a palavra rapidamente"
+        content="Listas de palavras com desenhos e respostas do gartic. Buscador de palavras do Gartic.Uma ajuda pra você ganhar sua partida com os amigos! Aplique diversos filtros e adivinhe a palavra rapidamente"
       />
       <meta
         property="og:description"
-        content="Buscador de palavras do Gartic. Listas de palavras e respostas. Aplique diversos filtros e adivinhe a palavra rapidamente"
+        content="Listas de palavras com desenhos e respostas do gartic. Buscador de palavras do Gartic.Uma ajuda pra você ganhar sua partida com os amigos! Aplique diversos filtros e adivinhe a palavra rapidamente"
       />
       <meta name="robots" content="index, follow" />
     </Head>

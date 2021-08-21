@@ -6,6 +6,7 @@ import GlobalStyle from "../../styles/global";
 import { Container } from "../../styles/Categories";
 
 import wordsRepository from "../../database/words";
+import generateWordsDescription from "../../utils/generateWordsDescription";
 
 import NavBar from "../../components/NavBar";
 import FiltersSection from "../../components/FiltersSection";
@@ -17,6 +18,8 @@ const Categories: React.FC = () => {
 
   const [words, setWords] = useState<string[]>([]);
   const [filteredWords, setFilteredWords] = useState<string[]>([]);
+
+  const wordsDescription = generateWordsDescription(words);
 
   useEffect(() => {
     const categoryData = wordsRepository.find(
@@ -45,12 +48,12 @@ const Categories: React.FC = () => {
           property="og:title"
         />
         <meta
-          content={`Respostas e hack para gartic da categoria ${category}, desenhos, lista de palavras de ${category} para o Gartic, Gartic Helper - ${category}`}
-          property="description"
+          name="description"
+          content={`Lista de ${category} do gartic respostas completas e desenhos - ${wordsDescription}`}
         />
         <meta
-          content={`Respostas e hack para gartic da categoria ${category}, desenhos, lista de palavras de ${category} para o Gartic, Gartic Helper - ${category}`}
           property="og:description"
+          content={`Lista de ${category} do gartic respostas completas e desenhos - ${wordsDescription}`}
         />
         <meta name="robots" content="index, follow" />
       </Head>

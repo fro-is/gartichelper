@@ -53,7 +53,7 @@ export const ModalContainer = styled.div`
   }
 
   > a,
-  p {
+  > p {
     color: #143461;
     text-decoration: none;
     font-weight: 700;
