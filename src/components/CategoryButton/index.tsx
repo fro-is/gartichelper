@@ -26,15 +26,17 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
     >
       <meta itemProp="position" content={position} />
       <Link href={`/temas/${category.toLowerCase()}`}>
-        <Button itemProp="item">
-          <Image
-            src={icon}
-            alt={category}
-            width="32px"
-            height="32px"
-            itemProp="image"
-          />
-          <span itemProp="name">{category}</span>
+        <Button>
+          <a itemProp="item">
+            <Image
+              src={icon}
+              alt={category}
+              width="32px"
+              height="32px"
+              itemProp="image"
+            />
+            <span itemProp="name">{category}</span>
+          </a>
         </Button>
       </Link>
     </li>
