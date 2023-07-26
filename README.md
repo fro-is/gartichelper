@@ -1,4 +1,4 @@
-# [Gartic Helper](https://gartichelper.me/)
+# [Gartic Helper](https://gartichelper.vercel.app/)
 
 Uma ajudinha pra você mandar ver na sua partida de Gartic! Procure as palavras de uma forma rápida e com filtragem de acordo com a dica que você tiver no Gartic!
 
