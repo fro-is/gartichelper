@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { Analytics } from '@vercel/analytics/react';
 
 import {
   StyledBody,
@@ -59,6 +60,7 @@ const Home: React.FC = () => (
           ))}
         </CategoryContainer>
       </main>
+      <Analytics />
     </StyledBody>
   </>
 );
