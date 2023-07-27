@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://gartichelper.me</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.947Z</lastmod></url>
-<url><loc>https://gartichelper.me/blog</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.948Z</lastmod></url>
-<url><loc>https://gartichelper.me/help</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.948Z</lastmod></url>
-<url><loc>https://gartichelper.me/server-sitemap.xml</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.948Z</lastmod></url>
+<url><loc>https://gartichelper.vercel.app</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.947Z</lastmod></url>
+<url><loc>https://gartichelper.vercel.app/blog</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.948Z</lastmod></url>
+<url><loc>https://gartichelper.vercel.app/help</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.948Z</lastmod></url>
+<url><loc>https://gartichelper.vercel.app/server-sitemap.xml</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-20T23:59:42.948Z</lastmod></url>
 </urlset>

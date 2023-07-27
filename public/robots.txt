@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://gartichelper.me
+Host: https://gartichelper.vercel.app
 
 # Sitemaps
-Sitemap: https://gartichelper.me/sitemap.xml
-Sitemap: https://gartichelper.me/server-sitemap.xml
+Sitemap: https://gartichelper.vercel.app/sitemap.xml
+Sitemap: https://gartichelper.vercel.app/server-sitemap.xml
